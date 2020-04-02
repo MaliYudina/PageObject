@@ -11,4 +11,9 @@ class LoginPageLocators:
 
 
 class ProductPageLocators:
-    BASKET_BUTTON = (By.CSS_SELECTOR, '.btn-add-to-basket')
+    basket_btn_loc = (By.CSS_SELECTOR, '.btn-add-to-basket')
+    product_title_loc = (By.CSS_SELECTOR, 'h1')
+    msg_after_add_loc = (By.CSS_SELECTOR, '.alert-success:first-child .alertinner strong')
+    price_loc = (By.CSS_SELECTOR, '.product_main .price_color')
+    basket_total_loc = (By.CSS_SELECTOR, '.alert-info .alertinner strong')
+    success_msg_loc = (By.CSS_SELECTOR, '.alert-success:first-child')
