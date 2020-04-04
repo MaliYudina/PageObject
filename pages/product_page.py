@@ -27,3 +27,13 @@ class ProductPage(BasePage):
     def check_if_item_added_to_basket(self):
         self.check_msg_when_add_to_basket()
         self.check_equal_cost()
+
+    def should_not_be_success_message(self):
+        """упадет, как только увидит искомый элемент. Не появился: успех, тест зеленый. """
+        assert self.is_not_element_present(*ProductPageLocators.success_msg_loc), \
+            'Success message is presented, but should not be'
+
+    def should_be_success_message(self):
+        """будет ждать до тех пор, пока элемент не исчезнет"""
+        assert self.is_disappeared(*ProductPageLocators.success_msg_loc), \
+            'Success message is not disappeared, but should be'
