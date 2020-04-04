@@ -1,19 +1,20 @@
+"""
+This module initiate the methods of user registration & login
+and checks the presence of the corresponding web elements
+"""
 from .base_page import BasePage
 from .locators import LoginPageLocators
 import time
-import pdb
 
 
 class LoginPage(BasePage):
     """
-    Добавьте в LoginPage метод register_new_user(email, password),
-    который принимает две строки и регистрирует пользователя.
-    Реализуйте его, описав соответствующие элементы страницы.
+    Class initiates registration and login methods
     """
 
     def register_new_user(self, email, password):
-        """ метод register_new_user(email, password),
-        который принимает две строки и регистрирует пользователя.
+        """
+        Register new user through email and password params
         """
         email_f = f'{str(time.time())}@mail.ru'
         password_f = "@#somefakepass19"
@@ -26,12 +27,10 @@ class LoginPage(BasePage):
         submit_btn = self.browser.find_element(*LoginPageLocators.submit_btn_loc)
         submit_btn.click()
         time.sleep(5)
-        # self.should_be_authorized_user()
 
     def should_be_login_page(self):
         """
-        OK
-        Check if login page and obligatory functions are available
+        Check if login page and registration form are available
         """
         self.should_be_login_url()
         self.should_be_login_form()
@@ -39,7 +38,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         """
-        Check if url has value 'login'
+        Check if url has readable value 'login'
         """
         assert 'login' in self.browser.current_url, \
             "Current url doesn't have 'login'"
