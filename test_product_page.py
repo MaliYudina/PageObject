@@ -67,7 +67,7 @@ class TestUserAddToBasketFromProductPage:
     Class for registration a test user for the following implementation of user action
     when using product pages
     """
-    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
+    link = "http://selenium1py.pythonanywhere.com/catalogue/silence-on-the-wire_196/"
 
     @pytest.fixture(scope='function', autouse=True)
     def setup(self, browser):
