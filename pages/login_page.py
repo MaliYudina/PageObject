@@ -16,14 +16,12 @@ class LoginPage(BasePage):
         """
         Register new user through email and password params
         """
-        email_f = f'{str(time.time())}@mail.ru'
-        password_f = "@#somefakepass19"
-        email = self.browser.find_element(*LoginPageLocators.register_email_loc)
-        email.send_keys(email_f)
-        password = self.browser.find_element(*LoginPageLocators.register_pass_loc)
-        password.send_keys(password_f)
-        confirm_pass = self.browser.find_element(*LoginPageLocators.confirm_pass_loc)
-        confirm_pass.send_keys(password_f)
+        email_field = self.browser.find_element(*LoginPageLocators.register_email_loc)
+        email_field.send_keys(email)
+        password_field = self.browser.find_element(*LoginPageLocators.register_pass_loc)
+        password_field.send_keys(password)
+        confirm_pass_field = self.browser.find_element(*LoginPageLocators.confirm_pass_loc)
+        confirm_pass_field.send_keys(password)
         submit_btn = self.browser.find_element(*LoginPageLocators.submit_btn_loc)
         submit_btn.click()
         time.sleep(5)
