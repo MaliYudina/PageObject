@@ -31,7 +31,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     Guest redirected to the basket page without submitting the basket button.
     The basket shall be empty and 'empty message' is present.
     """
-    link = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/reversing_202/'
+    link = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-girl-who-played-with-non-fire_203/'
     page = ProductPage(browser, link)
     page.open()
     page.go_to_basket_page()
@@ -44,7 +44,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     """
     Guest can open login page from any product page
     """
-    link = 'http://selenium1py.pythonanywhere.com/catalogue/'
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/google-hacking_197/'
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
@@ -56,7 +56,7 @@ def test_guest_should_see_login_link_on_product_page(browser):
     """
     Guest can see login link with 'login' text value from any product page
     """
-    link = 'http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/'
+    link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207'
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
