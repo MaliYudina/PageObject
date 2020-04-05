@@ -11,6 +11,9 @@ import time
 
 
 class TestGuestUserAddToBasketFromProductPage:
+    """
+    Tests for non-authorized guest user
+    """
     @pytest.mark.need_review
     def test_guest_can_add_product_to_basket(self, browser):
         """
